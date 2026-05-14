@@ -94,13 +94,35 @@ ecommerce-funnel-analysis/
 ### 2. Channel Performance
 
 **Key Metrics:**
-- [To be added]
+- Total Users (Top Channels):
+  - Direct: 275,411
+  - Google: 197,853
+  - YouTube: 201,088
+
+- Highest Revenue Channels:
+  - Direct: $1,332,212.03
+  - Google: $268,268.31
+  - DFA: $128,626.23
+
+- Highest Conversion Rates:
+  - dealspotr.com: 12.46%
+  - mail.google.com: 8.02%
+  - dfa: 3.36%
+
+- Overall Performance Range:
+  - Conversion rates vary from 0.01% to 12.46% across channels
+
+- Low/Zero Conversion Channels:
+  - YouTube (0.01% conversion rate, 11 purchasers)
+  - Several Google subdomains and referral sources (0% purchasers)
 
 **Key Insight:**
-- [To be added]
+- The analysis reveals a highly unbalanced acquisition structure. While Direct and Google drive the majority of traffic, Direct traffic contributes significantly higher revenue efficiency. Google and YouTube generate large volumes of users but exhibit very low conversion rates, suggesting low-intent acquisition traffic.
+
+- In contrast, smaller referral sources such as dealspotr.com and mail.google.com demonstrate significantly higher conversion rates despite lower traffic volumes, indicating stronger user intent and more efficient targeting.
 
 **Business Interpretation:**
-- [To be added]
+- This suggests that the business is heavily reliant on broad, low-intent acquisition channels while underutilising smaller but higher-performing referral sources. Optimising marketing spend toward higher-converting channels and improving targeting precision for large platforms like Google and YouTube could significantly improve overall revenue efficiency.
 
 ---
 
