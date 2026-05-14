@@ -54,20 +54,21 @@ We aim to understand:
 
 ecommerce-funnel-analysis/
 - data/
- - funnel_conversion_rates.csv
- - funnel_stage_counts.csv
- - [PLACEHOLDER INSERT OTHER EXPORTED QUERY RESULTS]
+  - funnel_conversion_rates.csv
+  - funnel_stage_counts.csv
+  - channel_performance_results.csv
+  - [PLACEHOLDER INSERT OTHER EXPORTED QUERY RESULTS]
 - sql/
- - 01_funnel_analysis.sql
- - 02_channel_performance.sql
- - 03_customer_segments.sql
- - 04_product_analysis.sql
+  - 01_funnel_analysis.sql
+  - 02_channel_performance.sql
+  - 03_customer_segments.sql
+  - 04_product_analysis.sql
 - visuals/
- - funnel_dropoff.png
- - revenue_by_channel.png
- - channel_conversion_rate.png
- - new_vs_returning_users.png
- - top_products.png
+  - funnel_dropoff.png
+  - revenue_by_channel.png
+  - channel_conversion_rate.png
+  - new_vs_returning_users.png
+  - top_products.png
 - README.md
 
 ---
