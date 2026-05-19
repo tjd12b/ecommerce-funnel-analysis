@@ -45,7 +45,7 @@ We aim to understand:
 
 - SQL (BigQuery)
 - Google BigQuery public datasets
-- Excel / Tableau (for visualisation)
+- Tableau (for visualisation)
 - Python (optional for extended analysis)
 
 ---
@@ -57,7 +57,8 @@ ecommerce-funnel-analysis/
   - funnel_conversion_rates.csv
   - funnel_stage_counts.csv
   - channel_performance_results.csv
-  - [PLACEHOLDER INSERT OTHER EXPORTED QUERY RESULTS]
+  - customer_segments_results.csv
+  - product_performance_results.csv
 - sql/
   - 01_funnel_analysis.sql
   - 02_channel_performance.sql
@@ -156,13 +157,31 @@ ecommerce-funnel-analysis/
 ### 4. Product Analysis
 
 **Key Metrics:**
-- [To be added]
+- Top Revenue Product:
+  - Google Men's Zip Hoodie: $47,636.27
+
+- Top 5 Revenue Categories:
+  - Apparel
+  - Drinkware
+  - Journals
+  - Accessories
+  - Bags
+
+- High-Converting Products:
+  - Google 22 oz Water Bottle: 1,583 purchases
+  - Google Sunglasses: 2,756 purchases
+  - Google Men's Hero Tee Black: 1,448 purchases
+
+- High-Traffic / Low-Conversion Products:
+  - Waterproof Backpack: 7,778 views / 266 purchases
+  - Google Alpine Style Backpack: 8,038 views / 198 purchases
+  - Google Rucksack: 6,002 views / 250 purchases
 
 **Key Insight:**
-- [To be added]
+- Product revenue is concentrated among a relatively small group of high-performing products, particularly within apparel and drinkware categories. While several products demonstrate strong conversion efficiency, others generate substantial browsing interest but underperform in purchases, indicating potential friction in pricing, merchandising, or product page experience.
 
 **Business Interpretation:**
-- [To be added]
+- The business appears to benefit from a concentrated portfolio of strong-performing branded essentials such as hoodies, bottles, and apparel. However, several backpack and accessory products attract significant attention without proportional purchases, representing an opportunity for pricing optimisation, improved product merchandising, or checkout experimentation.
 
 ---
 
