@@ -1,0 +1,3 @@
+user_type,users,total_sessions,total_pageviews,product_views,add_to_carts,purchases,total_revenue,purchase_rate_pct
+New Users,701623,870955,3263448,116522,46487,10382,1457253.96,1.48
+Returning Users,12544,31800,211738,7531,3611,1169,322730.72,9.32

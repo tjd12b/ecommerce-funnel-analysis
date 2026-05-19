@@ -130,13 +130,26 @@ ecommerce-funnel-analysis/
 ### 3. Customer Segments
 
 **Key Metrics:**
-- [To be added]
+- User Distribution:
+  - New Users: 701,623
+  - Returning Users: 12,544
+
+- Purchase Rate:
+  - New Users: 1.48%
+  - Returning Users: 9.32%
+
+- Revenue:
+  - New Users: $1,457,253.96
+  - Returning Users: $322,730.72
+
+- Conversion Comparison:
+  - Returning users convert ~6.3x higher than new users
 
 **Key Insight:**
-- [To be added]
+- Returning users convert significantly better than new users, with a purchase rate of 9.32% compared to 1.48% for new users. While new users account for the overwhelming majority of site traffic, returning users demonstrate substantially higher purchase intent and stronger engagement throughout the funnel.
 
 **Business Interpretation:**
-- [To be added]
+- The business currently appears highly acquisition-focused, relying heavily on new user traffic to drive overall revenue. However, returning users are disproportionately more valuable, converting at over 6x the rate of new users. This suggests that customer retention, remarketing, and repeat engagement strategies represent a major opportunity for revenue growth and improved marketing efficiency.
 
 ---
 
@@ -175,10 +188,10 @@ All visualisations are stored in the `/visuals` folder.
 
 ## 🚀 Recommendations (To be completed at end)
 
-- Improve top-of-funnel acquisition targeting to increase product engagement
-- Reduce checkout friction to improve conversion rates
-- Invest in highest-converting acquisition channels
-- Optimise product discovery experience
+- Improve retention and remarketing campaigns
+- Personalise email re-engagement flows
+- Incentivise second purchase behavior
+- Reduce dependency on constant new-user acquisition
 
 ---
 
