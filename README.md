@@ -90,6 +90,8 @@ ecommerce-funnel-analysis/
 - visuals/
   - funnel_dashboard.png
   - revenue_dashboard.png
+- tableau/
+  - ecommerce_funnel_analysis.twbx
 - README.md
 
 ---
