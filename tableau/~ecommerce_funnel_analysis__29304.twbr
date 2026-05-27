@@ -1,0 +1,2266 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0520.1026                               -->
+<workbook original-version='18.1' source-build='2025.1.2 (20251.25.0520.1026)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='ecommerce_funnel_analysis' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='funnel_stage_counts' inline='true' name='federated.17d9i5m0zsblzt14yj50q1ofuuyo' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='funnel_stage_counts' name='textscan.0liwnjb1sjslnt1d1yvib1gurtxy'>
+            <connection class='textscan' directory='C:/Users/tjd12/OneDrive/Github Portfolio/ecommerce-funnel-analysis/data' filename='funnel_stage_counts.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Add To Carts]' />
+            <value name='[Product Views]' />
+            <value name='[Purchasers]' />
+            <value name='[Total Visitors]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[funnel_stage_counts.csv].[add_to_carts]' />
+              <field name='[funnel_stage_counts.csv].[product_views]' />
+              <field name='[funnel_stage_counts.csv].[purchasers]' />
+              <field name='[funnel_stage_counts.csv].[total_visitors]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0liwnjb1sjslnt1d1yvib1gurtxy' name='funnel_stage_counts.csv' table='[funnel_stage_counts#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='total_visitors' ordinal='0' />
+              <column datatype='integer' name='product_views' ordinal='1' />
+              <column datatype='integer' name='add_to_carts' ordinal='2' />
+              <column datatype='integer' name='purchasers' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[funnel_stage_counts.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_stage_counts.csv_4225DE9259FB43189992033456A3F3D0]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_stage_counts.csv_4225DE9259FB43189992033456A3F3D0]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Funnel Stage' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Add To Carts&quot;' value='Add To Cart' />
+          <alias key='&quot;Total Visitors&quot;' value='Visitors' />
+        </aliases>
+      </column>
+      <column caption='Users' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='funnel_stage_counts.csv' datatype='table' name='[__tableau_internal_object_id__].[funnel_stage_counts.csv_4225DE9259FB43189992033456A3F3D0]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_12agx2p0zoyqw91185mr31gu8v32.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Pivot</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='funnel_stage_counts.csv' id='funnel_stage_counts.csv_4225DE9259FB43189992033456A3F3D0'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='integer' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Add To Carts]' />
+                  <value name='[Product Views]' />
+                  <value name='[Purchasers]' />
+                  <value name='[Total Visitors]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[funnel_stage_counts.csv].[add_to_carts]' />
+                    <field name='[funnel_stage_counts.csv].[product_views]' />
+                    <field name='[funnel_stage_counts.csv].[purchasers]' />
+                    <field name='[funnel_stage_counts.csv].[total_visitors]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.0liwnjb1sjslnt1d1yvib1gurtxy' name='funnel_stage_counts.csv' table='[funnel_stage_counts#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='integer' name='total_visitors' ordinal='0' />
+                    <column datatype='integer' name='product_views' ordinal='1' />
+                    <column datatype='integer' name='add_to_carts' ordinal='2' />
+                    <column datatype='integer' name='purchasers' ordinal='3' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='funnel_conversion_rates' inline='true' name='federated.1bgejjk101swxk11s3l991o113ba' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='funnel_conversion_rates' name='textscan.1ls0yp10lxpf671eo6aug0jrnx14'>
+            <connection class='textscan' directory='C:/Users/tjd12/OneDrive/Github Portfolio/ecommerce-funnel-analysis/data' filename='funnel_conversion_rates.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Cart To Purchase Pct]' />
+            <value name='[Product To Cart Pct]' />
+            <value name='[Visit To Product View Pct]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[funnel_conversion_rates.csv].[cart_to_purchase_pct]' />
+              <field name='[funnel_conversion_rates.csv].[product_to_cart_pct]' />
+              <field name='[funnel_conversion_rates.csv].[visit_to_product_view_pct]' />
+            </group>
+          </groups>
+          <relation connection='textscan.1ls0yp10lxpf671eo6aug0jrnx14' name='funnel_conversion_rates.csv' table='[funnel_conversion_rates#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='total_visitors' ordinal='0' />
+              <column datatype='integer' name='product_views' ordinal='1' />
+              <column datatype='integer' name='add_to_carts' ordinal='2' />
+              <column datatype='integer' name='purchasers' ordinal='3' />
+              <column datatype='real' name='visit_to_product_view_pct' ordinal='4' />
+              <column datatype='real' name='product_to_cart_pct' ordinal='5' />
+              <column datatype='real' name='cart_to_purchase_pct' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[funnel_conversion_rates.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_visitors</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_visitors]</local-name>
+            <parent-name>[funnel_conversion_rates.csv]</parent-name>
+            <remote-alias>total_visitors</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[product_views]</local-name>
+            <parent-name>[funnel_conversion_rates.csv]</parent-name>
+            <remote-alias>product_views</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>add_to_carts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[add_to_carts]</local-name>
+            <parent-name>[funnel_conversion_rates.csv]</parent-name>
+            <remote-alias>add_to_carts</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchasers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[purchasers]</local-name>
+            <parent-name>[funnel_conversion_rates.csv]</parent-name>
+            <remote-alias>purchasers</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Conversion Stage' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Cart To Purchase Pct&quot;' value='Cart -&gt; Purchase' />
+          <alias key='&quot;Product To Cart Pct&quot;' value='Product View -&gt; Cart' />
+          <alias key='&quot;Visit To Product View Pct&quot;' value='Visit -&gt; Product View' />
+        </aliases>
+      </column>
+      <column caption='conversion_rate_pct' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='funnel_conversion_rates.csv' datatype='table' name='[__tableau_internal_object_id__].[funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9]' role='measure' type='quantitative' />
+      <column caption='Add To Carts' datatype='integer' name='[add_to_carts]' role='measure' type='quantitative' />
+      <column caption='Product Views' datatype='integer' name='[product_views]' role='measure' type='quantitative' />
+      <column caption='Purchasers' datatype='integer' name='[purchasers]' role='measure' type='quantitative' />
+      <column caption='Total Visitors' datatype='integer' name='[total_visitors]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 1/#TableauTemp_1d13pai1k5zgqq16rrmka03zzq8h.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>total_visitors</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_visitors]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_visitors</remote-alias>
+              <ordinal>0</ordinal>
+              <family>funnel_conversion_rates.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_views</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[product_views]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_views</remote-alias>
+              <ordinal>1</ordinal>
+              <family>funnel_conversion_rates.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>add_to_carts</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[add_to_carts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>add_to_carts</remote-alias>
+              <ordinal>2</ordinal>
+              <family>funnel_conversion_rates.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchasers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[purchasers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchasers</remote-alias>
+              <ordinal>3</ordinal>
+              <family>funnel_conversion_rates.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='funnel_conversion_rates.csv' id='funnel_conversion_rates.csv_4BC900DC29F842D8A7A9D9CDD4861AA9'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Cart To Purchase Pct]' />
+                  <value name='[Product To Cart Pct]' />
+                  <value name='[Visit To Product View Pct]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[funnel_conversion_rates.csv].[cart_to_purchase_pct]' />
+                    <field name='[funnel_conversion_rates.csv].[product_to_cart_pct]' />
+                    <field name='[funnel_conversion_rates.csv].[visit_to_product_view_pct]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.1ls0yp10lxpf671eo6aug0jrnx14' name='funnel_conversion_rates.csv' table='[funnel_conversion_rates#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='integer' name='total_visitors' ordinal='0' />
+                    <column datatype='integer' name='product_views' ordinal='1' />
+                    <column datatype='integer' name='add_to_carts' ordinal='2' />
+                    <column datatype='integer' name='purchasers' ordinal='3' />
+                    <column datatype='real' name='visit_to_product_view_pct' ordinal='4' />
+                    <column datatype='real' name='product_to_cart_pct' ordinal='5' />
+                    <column datatype='real' name='cart_to_purchase_pct' ordinal='6' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='channel_performance_results' inline='true' name='federated.0pebqhk04kpipi17oieaa047qmfw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='channel_performance_results' name='textscan.1j0li9g106g3vb18j8qtu0ia112w'>
+            <connection class='textscan' directory='C:/Users/tjd12/OneDrive/Github Portfolio/ecommerce-funnel-analysis/data' filename='channel_performance_results.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1j0li9g106g3vb18j8qtu0ia112w' name='channel_performance_results.csv' table='[channel_performance_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='traffic_source' ordinal='0' />
+            <column datatype='integer' name='users' ordinal='1' />
+            <column datatype='integer' name='product_views' ordinal='2' />
+            <column datatype='integer' name='carts' ordinal='3' />
+            <column datatype='integer' name='purchasers' ordinal='4' />
+            <column datatype='real' name='conversion_rate_pct' ordinal='5' />
+            <column datatype='real' name='total_revenue' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>traffic_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[traffic_source]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>traffic_source</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>users</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[users]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>users</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[product_views]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>product_views</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>carts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[carts]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>carts</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchasers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[purchasers]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>purchasers</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>conversion_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[conversion_rate_pct]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>conversion_rate_pct</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_revenue]</local-name>
+            <parent-name>[channel_performance_results.csv]</parent-name>
+            <remote-alias>total_revenue</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='channel_performance_results.csv' datatype='table' name='[__tableau_internal_object_id__].[channel_performance_results.csv_D7AF83DD968547C98648062E025C010E]' role='measure' type='quantitative' />
+      <column caption='Carts' datatype='integer' name='[carts]' role='measure' type='quantitative' />
+      <column caption='Conversion Rate (%)' datatype='real' name='[conversion_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Product Views' datatype='integer' name='[product_views]' role='measure' type='quantitative' />
+      <column caption='Purchasers' datatype='integer' name='[purchasers]' role='measure' type='quantitative' />
+      <column caption='Revenue ($)' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+      <column caption='Traffic Source' datatype='string' name='[traffic_source]' role='dimension' type='nominal' />
+      <column caption='Users' datatype='integer' name='[users]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 2/#TableauTemp_1q9vj0n1ml43wg19lr7w913elm4x.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>traffic_source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[traffic_source]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>traffic_source</remote-alias>
+              <ordinal>0</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>users</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[users]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>users</remote-alias>
+              <ordinal>1</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_views</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[product_views]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_views</remote-alias>
+              <ordinal>2</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>36</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>carts</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[carts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>carts</remote-alias>
+              <ordinal>3</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>32</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchasers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[purchasers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchasers</remote-alias>
+              <ordinal>4</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>conversion_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[conversion_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>conversion_rate_pct</remote-alias>
+              <ordinal>5</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_revenue</remote-alias>
+              <ordinal>6</ordinal>
+              <family>channel_performance_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='channel_performance_results.csv' id='channel_performance_results.csv_D7AF83DD968547C98648062E025C010E'>
+            <properties context=''>
+              <relation connection='textscan.1j0li9g106g3vb18j8qtu0ia112w' name='channel_performance_results.csv' table='[channel_performance_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='traffic_source' ordinal='0' />
+                  <column datatype='integer' name='users' ordinal='1' />
+                  <column datatype='integer' name='product_views' ordinal='2' />
+                  <column datatype='integer' name='carts' ordinal='3' />
+                  <column datatype='integer' name='purchasers' ordinal='4' />
+                  <column datatype='real' name='conversion_rate_pct' ordinal='5' />
+                  <column datatype='real' name='total_revenue' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='customer_segments_results' inline='true' name='federated.02tb23s1dlyneo12pqgvf0nwpabh' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='customer_segments_results' name='textscan.0s9yvjt0wxqpb81grantl01eczv5'>
+            <connection class='textscan' directory='C:/Users/tjd12/OneDrive/Github Portfolio/ecommerce-funnel-analysis/data' filename='customer_segments_results.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0s9yvjt0wxqpb81grantl01eczv5' name='customer_segments_results.csv' table='[customer_segments_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='user_type' ordinal='0' />
+            <column datatype='integer' name='users' ordinal='1' />
+            <column datatype='integer' name='total_sessions' ordinal='2' />
+            <column datatype='integer' name='total_pageviews' ordinal='3' />
+            <column datatype='integer' name='product_views' ordinal='4' />
+            <column datatype='integer' name='add_to_carts' ordinal='5' />
+            <column datatype='integer' name='purchases' ordinal='6' />
+            <column datatype='real' name='total_revenue' ordinal='7' />
+            <column datatype='real' name='purchase_rate_pct' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[user_type]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>user_type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>users</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[users]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>users</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_sessions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_sessions]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>total_sessions</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_pageviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_pageviews]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>total_pageviews</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[product_views]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>product_views</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>add_to_carts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[add_to_carts]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>add_to_carts</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchases</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[purchases]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>purchases</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_revenue]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>total_revenue</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchase_rate_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[purchase_rate_pct]</local-name>
+            <parent-name>[customer_segments_results.csv]</parent-name>
+            <remote-alias>purchase_rate_pct</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='customer_segments_results.csv' datatype='table' name='[__tableau_internal_object_id__].[customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC]' role='measure' type='quantitative' />
+      <column caption='Add To Carts' datatype='integer' name='[add_to_carts]' role='measure' type='quantitative' />
+      <column caption='Product Views' datatype='integer' name='[product_views]' role='measure' type='quantitative' />
+      <column caption='Purchase Rate (%)' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[purchase_rate_pct]' role='measure' type='quantitative' />
+      <column caption='Purchases' datatype='integer' name='[purchases]' role='measure' type='quantitative' />
+      <column caption='Total Pageviews' datatype='integer' name='[total_pageviews]' role='measure' type='quantitative' />
+      <column caption='Total Revenue' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+      <column caption='Total Sessions' datatype='integer' name='[total_sessions]' role='measure' type='quantitative' />
+      <column caption='User Type' datatype='string' name='[user_type]' role='dimension' type='nominal' />
+      <column caption='Users' datatype='integer' name='[users]' role='measure' type='quantitative' />
+      <column-instance column='[user_type]' derivation='None' name='[none:user_type:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 3/#TableauTemp_0k2kqss0w4h989177n36j0ys7e7l.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[user_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_type</remote-alias>
+              <ordinal>0</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>users</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[users]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>users</remote-alias>
+              <ordinal>1</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_sessions</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_sessions]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_sessions</remote-alias>
+              <ordinal>2</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_pageviews</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_pageviews]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_pageviews</remote-alias>
+              <ordinal>3</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_views</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[product_views]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_views</remote-alias>
+              <ordinal>4</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>add_to_carts</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[add_to_carts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>add_to_carts</remote-alias>
+              <ordinal>5</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchases</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[purchases]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchases</remote-alias>
+              <ordinal>6</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_revenue</remote-alias>
+              <ordinal>7</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchase_rate_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[purchase_rate_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchase_rate_pct</remote-alias>
+              <ordinal>8</ordinal>
+              <family>customer_segments_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:user_type:nk]' type='palette'>
+            <map to='#2a5783'>
+              <bucket>&quot;Returning Users&quot;</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>&quot;New Users&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='customer_segments_results.csv' id='customer_segments_results.csv_7AAE7204FB7A41ECA6A2AEBA18ED5FCC'>
+            <properties context=''>
+              <relation connection='textscan.0s9yvjt0wxqpb81grantl01eczv5' name='customer_segments_results.csv' table='[customer_segments_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='user_type' ordinal='0' />
+                  <column datatype='integer' name='users' ordinal='1' />
+                  <column datatype='integer' name='total_sessions' ordinal='2' />
+                  <column datatype='integer' name='total_pageviews' ordinal='3' />
+                  <column datatype='integer' name='product_views' ordinal='4' />
+                  <column datatype='integer' name='add_to_carts' ordinal='5' />
+                  <column datatype='integer' name='purchases' ordinal='6' />
+                  <column datatype='real' name='total_revenue' ordinal='7' />
+                  <column datatype='real' name='purchase_rate_pct' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='product_performance_results' inline='true' name='federated.1xilqyk1i92vvn1bmbzlc1yl9lrd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='product_performance_results' name='textscan.10d5phf1tv1liy1cihf2b0i6ck84'>
+            <connection class='textscan' directory='C:/Users/tjd12/OneDrive/Github Portfolio/ecommerce-funnel-analysis/data' filename='product_performance_results.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.10d5phf1tv1liy1cihf2b0i6ck84' name='product_performance_results.csv' table='[product_performance_results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='product_name' ordinal='0' />
+            <column datatype='integer' name='product_views' ordinal='1' />
+            <column datatype='integer' name='add_to_carts' ordinal='2' />
+            <column datatype='integer' name='purchases' ordinal='3' />
+            <column datatype='real' name='total_revenue' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_name]</local-name>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias>product_name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_views</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[product_views]</local-name>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias>product_views</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>add_to_carts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[add_to_carts]</local-name>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias>add_to_carts</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchases</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[purchases]</local-name>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias>purchases</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[total_revenue]</local-name>
+            <parent-name>[product_performance_results.csv]</parent-name>
+            <remote-alias>total_revenue</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='product_performance_results.csv' datatype='table' name='[__tableau_internal_object_id__].[product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117]' role='measure' type='quantitative' />
+      <column caption='Add To Carts' datatype='integer' name='[add_to_carts]' role='measure' type='quantitative' />
+      <column caption='Product Name' datatype='string' name='[product_name]' role='dimension' type='nominal' />
+      <column caption='Product Views' datatype='integer' name='[product_views]' role='measure' type='quantitative' />
+      <column caption='Purchases' datatype='integer' name='[purchases]' role='measure' type='quantitative' />
+      <column caption='Revenue ($)' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 3/#TableauTemp_0mxy8tm1lzkox11gwt07g1sh6mzz.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>product_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_name</remote-alias>
+              <ordinal>0</ordinal>
+              <family>product_performance_results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>421</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_views</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[product_views]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_views</remote-alias>
+              <ordinal>1</ordinal>
+              <family>product_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>352</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>add_to_carts</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[add_to_carts]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>add_to_carts</remote-alias>
+              <ordinal>2</ordinal>
+              <family>product_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>283</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchases</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[purchases]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchases</remote-alias>
+              <ordinal>3</ordinal>
+              <family>product_performance_results.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>170</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[total_revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_revenue</remote-alias>
+              <ordinal>4</ordinal>
+              <family>product_performance_results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>406</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='product_performance_results.csv' id='product_performance_results.csv_6BEDF401158642BE9DAB3A3ED93A3117'>
+            <properties context=''>
+              <relation connection='textscan.10d5phf1tv1liy1cihf2b0i6ck84' name='product_performance_results.csv' table='[product_performance_results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='product_name' ordinal='0' />
+                  <column datatype='integer' name='product_views' ordinal='1' />
+                  <column datatype='integer' name='add_to_carts' ordinal='2' />
+                  <column datatype='integer' name='purchases' ordinal='3' />
+                  <column datatype='real' name='total_revenue' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='01_Funnel_Dropoff'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ecommerce Funnel Drop-off Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='funnel_stage_counts' name='federated.17d9i5m0zsblzt14yj50q1ofuuyo' />
+          </datasources>
+          <datasource-dependencies datasource='federated.17d9i5m0zsblzt14yj50q1ofuuyo'>
+            <column caption='Funnel Stage' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Add To Carts&quot;' value='Add To Cart' />
+                <alias key='&quot;Total Visitors&quot;' value='Visitors' />
+              </aliases>
+            </column>
+            <column caption='Users' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[none:Pivot Field Names:nk]' direction='DESC' using='[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[sum:Pivot Field Values:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[sum:Pivot Field Values:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[none:Pivot Field Names:nk]' value='10' />
+            <format attr='font-size' field='[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[sum:Pivot Field Values:qk]' value='10' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[none:Pivot Field Names:nk]</rows>
+        <cols>[federated.17d9i5m0zsblzt14yj50q1ofuuyo].[sum:Pivot Field Values:qk]</cols>
+      </table>
+      <simple-id uuid='{AB65A14D-4DCA-45A6-B4F1-A53569A84150}' />
+    </worksheet>
+    <worksheet name='02_Conversion_Rates'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Conversion Efficiency by Funnel Stage</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='funnel_conversion_rates' name='federated.1bgejjk101swxk11s3l991o113ba' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1bgejjk101swxk11s3l991o113ba'>
+            <column caption='Conversion Stage' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Cart To Purchase Pct&quot;' value='Cart -&gt; Purchase' />
+                <alias key='&quot;Product To Cart Pct&quot;' value='Product View -&gt; Cart' />
+                <alias key='&quot;Visit To Product View Pct&quot;' value='Visit -&gt; Product View' />
+              </aliases>
+            </column>
+            <column caption='conversion_rate_pct' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1bgejjk101swxk11s3l991o113ba].[none:Pivot Field Names:nk]' direction='DESC' using='[federated.1bgejjk101swxk11s3l991o113ba].[sum:Pivot Field Values:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1bgejjk101swxk11s3l991o113ba].[sum:Pivot Field Values:qk]' scope='cols' value='Conversion Rate (%)' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1bgejjk101swxk11s3l991o113ba].[none:Pivot Field Names:nk]' value='176' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1bgejjk101swxk11s3l991o113ba].[sum:Pivot Field Values:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='font-size' field='[federated.1bgejjk101swxk11s3l991o113ba].[sum:Pivot Field Values:qk]' value='10' />
+            <format attr='font-size' field='[federated.1bgejjk101swxk11s3l991o113ba].[none:Pivot Field Names:nk]' value='10' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1bgejjk101swxk11s3l991o113ba].[none:Pivot Field Names:nk]</rows>
+        <cols>[federated.1bgejjk101swxk11s3l991o113ba].[sum:Pivot Field Values:qk]</cols>
+      </table>
+      <simple-id uuid='{3A0B4B16-F082-4884-AA02-70887879D1E2}' />
+    </worksheet>
+    <worksheet name='03_Traffic_Source_Revenue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Top Revenue-Generating Traffic Sources</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='channel_performance_results' name='federated.0pebqhk04kpipi17oieaa047qmfw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pebqhk04kpipi17oieaa047qmfw'>
+            <column-instance column='[traffic_source]' derivation='None' name='[none:traffic_source:nk]' pivot='key' type='nominal' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Revenue ($)' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column caption='Traffic Source' datatype='string' name='[traffic_source]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([total_revenue])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:traffic_source:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]' direction='DESC' using='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' />
+          <slices>
+            <column>[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='font-size' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]' value='10' />
+            <format attr='font-size' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' value='10' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]</rows>
+        <cols>[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{B349ED01-24FB-494C-8FE3-5821E587FEA9}' />
+    </worksheet>
+    <worksheet name='04_Traffic_Conversion_Scatter'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Traffic Source Revenue vs Conversion Efficiency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='channel_performance_results' name='federated.0pebqhk04kpipi17oieaa047qmfw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pebqhk04kpipi17oieaa047qmfw'>
+            <column caption='Conversion Rate (%)' datatype='real' name='[conversion_rate_pct]' role='measure' type='quantitative' />
+            <column-instance column='[traffic_source]' derivation='None' name='[none:traffic_source:nk]' pivot='key' type='nominal' />
+            <column-instance column='[conversion_rate_pct]' derivation='Sum' name='[sum:conversion_rate_pct:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Revenue ($)' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+            <column caption='Traffic Source' datatype='string' name='[traffic_source]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' included-values='in-range'>
+            <min>1000.0</min>
+          </filter>
+          <slices>
+            <column>[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:conversion_rate_pct:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='font-size' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' value='10' />
+            <format attr='font-size' field='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:conversion_rate_pct:qk]' value='10' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='cols' value='#ffffff' />
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='1' />
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]' />
+              <lod column='[federated.0pebqhk04kpipi17oieaa047qmfw].[none:traffic_source:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:conversion_rate_pct:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-table' value-column='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:conversion_rate_pct:qk]' z-order='1' />
+            <reference-line axis-column='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' enable-instant-analytics='true' formula='average' id='refline1' label-type='none' probability='95' scope='per-table' value-column='[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]' z-order='2' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.3513259887695312' />
+                <format attr='mark-color' value='#4e79a7' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:total_revenue:qk]</rows>
+        <cols>[federated.0pebqhk04kpipi17oieaa047qmfw].[sum:conversion_rate_pct:qk]</cols>
+      </table>
+      <simple-id uuid='{96644342-1745-4E17-A312-6183AB02AF65}' />
+    </worksheet>
+    <worksheet name='05_Customer_Segments'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Returning Users Convert at Significantly Higher Rates</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customer_segments_results' name='federated.02tb23s1dlyneo12pqgvf0nwpabh' />
+          </datasources>
+          <datasource-dependencies datasource='federated.02tb23s1dlyneo12pqgvf0nwpabh'>
+            <column-instance column='[user_type]' derivation='None' name='[none:user_type:nk]' pivot='key' type='nominal' />
+            <column caption='Purchase Rate (%)' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[purchase_rate_pct]' role='measure' type='quantitative' />
+            <column-instance column='[purchase_rate_pct]' derivation='Sum' name='[sum:purchase_rate_pct:qk]' pivot='key' type='quantitative' />
+            <column caption='User Type' datatype='string' name='[user_type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.02tb23s1dlyneo12pqgvf0nwpabh].[none:user_type:nk]' direction='DESC' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.02tb23s1dlyneo12pqgvf0nwpabh].[sum:purchase_rate_pct:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='font-size' field='[federated.02tb23s1dlyneo12pqgvf0nwpabh].[none:user_type:nk]' value='10' />
+            <format attr='font-size' field='[federated.02tb23s1dlyneo12pqgvf0nwpabh].[sum:purchase_rate_pct:qk]' value='10' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.02tb23s1dlyneo12pqgvf0nwpabh].[none:user_type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.02tb23s1dlyneo12pqgvf0nwpabh].[none:user_type:nk]</rows>
+        <cols>[federated.02tb23s1dlyneo12pqgvf0nwpabh].[sum:purchase_rate_pct:qk]</cols>
+      </table>
+      <simple-id uuid='{B11E3DE6-0596-4B45-954B-117BDDFE1F73}' />
+    </worksheet>
+    <worksheet name='06_Product_Revenue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Top Revenue-Generating Products</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='product_performance_results' name='federated.1xilqyk1i92vvn1bmbzlc1yl9lrd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1xilqyk1i92vvn1bmbzlc1yl9lrd'>
+            <column-instance column='[product_name]' derivation='None' name='[none:product_name:nk]' pivot='key' type='nominal' />
+            <column caption='Product Name' datatype='string' name='[product_name]' role='dimension' type='nominal' />
+            <column-instance column='[total_revenue]' derivation='Sum' name='[sum:total_revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Revenue ($)' datatype='real' name='[total_revenue]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]'>
+            <groupfilter count='15' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([total_revenue])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:product_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]' direction='DESC' using='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]' />
+          <slices>
+            <column>[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]' value='228' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='font-size' field='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]' value='10' />
+            <format attr='font-size' field='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]' value='9' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[none:product_name:nk]</rows>
+        <cols>[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{A29D433B-4350-4CAC-9797-632845CC4538}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='01_Funnel_Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ecommerce Funnel &amp; Customer Behavior Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98244' id='11' param='vert' type-v2='layout-flow' w='97698' x='1151' y='878'>
+            <zone h='10099' id='12' type-v2='title' w='97698' x='1151' y='878'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='88145' id='9' param='vert' type-v2='layout-flow' w='97698' x='1151' y='10977'>
+              <zone h='88145' id='7' type-v2='layout-basic' w='97698' x='1151' y='10977'>
+                <zone h='44060' id='3' name='01_Funnel_Dropoff' w='48841' x='1151' y='10977'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='44085' id='6' name='05_Customer_Segments' w='59767' x='1151' y='55037'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='44060' id='5' name='02_Conversion_Rates' w='48857' x='49992' y='10977'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='44085' id='13' type-v2='text' w='37931' x='60918' y='55037'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Key Insight:</run>
+                    <run>Æ&#10;</run>
+                    <run fontsize='12'>The largest funnel drop-off occurs between site visit and product engagement, indicating acquisition quality and landing-page optimization opportunities. Returning customers convert at significantly higher rates, highlighting the importance of retention and repeat purchase strategies.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run>Ecommerce Funnel &amp; Customer Behavior Analysis</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98244' id='20' param='vert' type-v2='layout-flow' w='97698' x='1151' y='878'>
+                <zone h='10099' id='12' type-v2='title' w='97698' x='1151' y='878'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='44060' id='3' is-fixed='true' name='01_Funnel_Dropoff' w='48841' x='1151' y='10977'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='44060' id='5' is-fixed='true' name='02_Conversion_Rates' w='48857' x='49992' y='10977'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='44085' id='6' is-fixed='true' name='05_Customer_Segments' w='59767' x='1151' y='55037'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='44085' id='13' type-v2='text' w='37931' x='60918' y='55037'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Key Insight:</run>
+                    <run>Æ&#10;</run>
+                    <run fontsize='12'>The largest funnel drop-off occurs between site visit and product engagement, indicating acquisition quality and landing-page optimization opportunities. Returning customers convert at significantly higher rates, highlighting the importance of retention and repeat purchase strategies.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{620D625A-220E-474E-8EA0-57EF99B9EE25}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='02_Revenue_Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Revenue Drivers &amp; Product Performance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98244' id='11' param='vert' type-v2='layout-flow' w='97698' x='1151' y='878'>
+            <zone h='5488' id='12' type-v2='title' w='97698' x='1151' y='878'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92756' id='9' param='horz' type-v2='layout-flow' w='97698' x='1151' y='6366'>
+              <zone h='92756' id='7' type-v2='layout-basic' w='97698' x='1151' y='6366'>
+                <zone h='46366' id='3' name='03_Traffic_Source_Revenue' w='48842' x='1151' y='6366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46390' id='6' name='06_Product_Revenue' w='70005' x='1151' y='52732'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46366' id='5' name='04_Traffic_Conversion_Scatter' w='48856' x='49993' y='6366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46390' id='13' type-v2='text' w='27693' x='71156' y='52732'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Key Insight:</run>
+                    <run>Æ&#10;</run>
+                    <run fontsize='12'>Revenue is concentrated among a small subset of traffic sources and products. Direct traffic generates the strongest overall revenue contribution, while several niche acquisition channels demonstrate disproportionately high conversion efficiency.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run>Revenue Drivers &amp; Product Performance</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98244' id='18' param='vert' type-v2='layout-flow' w='97698' x='1151' y='878'>
+                <zone h='5488' id='12' type-v2='title' w='97698' x='1151' y='878'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46366' id='3' is-fixed='true' name='03_Traffic_Source_Revenue' w='48842' x='1151' y='6366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46366' id='5' is-fixed='true' name='04_Traffic_Conversion_Scatter' w='48856' x='49993' y='6366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46390' id='6' is-fixed='true' name='06_Product_Revenue' w='70005' x='1151' y='52732'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='46390' id='13' type-v2='text' w='27693' x='71156' y='52732'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Key Insight:</run>
+                    <run>Æ&#10;</run>
+                    <run fontsize='12'>Revenue is concentrated among a small subset of traffic sources and products. Direct traffic generates the strongest overall revenue contribution, while several niche acquisition channels demonstrate disproportionately high conversion efficiency.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{EC8AB8BB-E45D-46EE-8A5B-4019751495AD}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Home'>
+      <style />
+      <size maxheight='860' maxwidth='650' minheight='560' minwidth='420' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='true' h='69884' id='3' type-v2='text' w='97538' x='1231' y='930'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontsize='15'>Ecommerce Funnel Analysis</run>
+              <run fontalignment='1'>Æ&#10;&#10;</run>
+              <run fontalignment='1' fontsize='15'>Interactive dashboards analyzing:</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontsize='15'>• Conversion funnel performance</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontsize='15'>• Customer retention</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontsize='15'>• Traffic source effectiveness</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontsize='15'>• Product revenue performance</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='28256' id='5' type-v2='dashboard-object' w='48769' x='1231' y='70814'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{4B35043C-A533-4673-A278-6CF17B722CB0}&quot;' button-type='text'>
+              <button-visual-state>
+                <caption>View Funnel &amp; Customer Dashboard</caption>
+                <button-caption-font-style fontname='Tableau Bold' />
+                <format attr='background-color' value='#ffffff' />
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='28256' id='6' type-v2='dashboard-object' w='48769' x='50000' y='70814'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{7F5A2816-1508-492F-95F4-EE352E3DEF01}&quot;' button-type='text'>
+              <button-visual-state>
+                <caption>View Revenue &amp; Product Dashboard</caption>
+                <button-caption-font-style fontname='Tableau Bold' />
+                <format attr='background-color' value='#ffffff' />
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A98494AB-FA82-4A9C-8F31-BD869F278256}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='141'>
+    <window class='worksheet' name='01_Funnel_Dropoff'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C7D1ACE0-C496-46A0-ACA4-37344A4C4F64}' />
+    </window>
+    <window class='worksheet' name='02_Conversion_Rates'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{BE57E551-DDC0-4AA2-A51F-56B9C405DCB4}' />
+    </window>
+    <window class='worksheet' name='03_Traffic_Source_Revenue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{BA631714-4C59-4F18-89FF-94C51DED045C}' />
+    </window>
+    <window class='worksheet' name='04_Traffic_Conversion_Scatter'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{15EDBF01-9A8A-49E5-BB63-3056ECF4770A}' />
+    </window>
+    <window class='worksheet' name='05_Customer_Segments'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{1ED4D751-64E7-47AD-8967-9D7E35EADF64}' />
+    </window>
+    <window class='worksheet' name='06_Product_Revenue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1xilqyk1i92vvn1bmbzlc1yl9lrd].[sum:total_revenue:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DDD3ADFE-5B0F-446B-969B-A89B58E7F406}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Home'>
+      <viewpoints />
+      <active id='3' />
+      <simple-id uuid='{AFB14247-6B70-415B-BE14-AFA01AB9CA3C}' />
+    </window>
+    <window class='dashboard' name='01_Funnel_Dashboard'>
+      <viewpoints>
+        <viewpoint name='01_Funnel_Dropoff'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='02_Conversion_Rates'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='05_Customer_Segments'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{4B35043C-A533-4673-A278-6CF17B722CB0}' />
+    </window>
+    <window class='dashboard' name='02_Revenue_Dashboard'>
+      <viewpoints>
+        <viewpoint name='03_Traffic_Source_Revenue'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='04_Traffic_Conversion_Scatter'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='06_Product_Revenue'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{7F5A2816-1508-492F-95F4-EE352E3DEF01}' />
+    </window>
+  </windows>
+</workbook>

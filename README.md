@@ -1,5 +1,23 @@
 # 📊 E-commerce Funnel & Customer Behaviour Analysis
 
+---
+
+## 🌐 Interactive Tableau Dashboard
+
+[View the Interactive Tableau Dashboard](https://public.tableau.com/views/ecommerce_funnel_analysis/Home?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+---
+
+## 📷 Dashboard Preview
+
+### Funnel & Customer Behaviour Dashboard
+![Funnel Dashboard](visuals/funnel_dashboard.png)
+
+### Revenue & Product Performance Dashboard
+![Revenue Dashboard](visuals/revenue_dashboard.png)
+
+---
+
 ## 📌 Overview
 
 This project analyses user behaviour across an e-commerce funnel using Google Analytics sample data in Google BigQuery.
@@ -44,9 +62,14 @@ We aim to understand:
 ## 🧰 Tools & Technologies
 
 - SQL (BigQuery)
-- Google BigQuery public datasets
-- Tableau (for visualisation)
-- Python (optional for extended analysis)
+- Tableau Public
+- Data Visualisation
+- Funnel Analysis
+- Customer Segmentation
+- Marketing Channel Analysis
+- Product Performance Analysis
+- Git & GitHub
+- Google Analytics Sample Ecommerce Dataset
 
 ---
 
@@ -65,11 +88,8 @@ ecommerce-funnel-analysis/
   - 03_customer_segments.sql
   - 04_product_analysis.sql
 - visuals/
-  - funnel_dropoff.png
-  - revenue_by_channel.png
-  - channel_conversion_rate.png
-  - new_vs_returning_users.png
-  - top_products.png
+  - funnel_dashboard.png
+  - revenue_dashboard.png
 - README.md
 
 ---
@@ -189,28 +209,46 @@ ecommerce-funnel-analysis/
 
 All visualisations are stored in the `/visuals` folder.
 
-- Funnel drop-off analysis
-- Channel performance comparison
-- Conversion rate by traffic source
-- Customer segmentation analysis
-- Product performance rankings
+### Dashboard 1 — Funnel & Customer Behaviour
+- Funnel conversion analysis
+- Conversion rate breakdown
+- Traffic source performance
+- New vs returning customer comparison
+
+### Dashboard 2 — Revenue & Product Performance
+- Product revenue analysis
+- Product conversion efficiency
+- Revenue-driving products
+- Product engagement vs purchase behaviour
 
 ---
 
-## 💡 Key Takeaways (To be completed at end)
+## 💡 Key Takeaways
 
-- [Insight 1]
-- [Insight 2]
-- [Insight 3]
+- The largest funnel drop-off occurs before product engagement, with only 13.9% of visitors reaching product pages
+- Returning users convert more than 6x higher than new users, highlighting the importance of retention strategies
+- Direct traffic generates the strongest overall revenue performance despite lower scale than broader acquisition channels
+- Several high-traffic products significantly underperform in conversion, indicating opportunities for merchandising and pricing optimisation
+- Revenue is concentrated among a relatively small group of high-performing apparel and drinkware products
 
 ---
 
-## 🚀 Recommendations (To be completed at end)
+## 🚀 Recommendations
 
-- Improve retention and remarketing campaigns
-- Personalise email re-engagement flows
-- Incentivise second purchase behavior
-- Reduce dependency on constant new-user acquisition
+- Improve top-of-funnel engagement to increase product discovery rates
+- Optimise checkout experience to reduce cart abandonment
+- Increase investment in high-converting referral and email-based acquisition channels
+- Develop retention and remarketing strategies targeting returning customers
+- Reduce reliance on low-intent acquisition traffic sources
+- Prioritise merchandising and optimisation efforts for high-traffic, low-conversion products
+
+---
+
+## 📈 Business Impact
+
+This analysis demonstrates how SQL and Tableau can be used to transform raw ecommerce event data into actionable business insights.
+
+The project identifies conversion bottlenecks, evaluates acquisition efficiency, highlights high-value customer behaviour, and surfaces revenue-driving products to support data-driven decision-making.
 
 ---
 
